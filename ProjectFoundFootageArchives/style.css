@@ -1,0 +1,121 @@
+body {
+    margin: 0; /* Remove espaço padrão do body */
+    height: 100vh; /* Faz o fundo ocupar 100% da tela */
+    
+    /* Define a imagem */
+    background-image: url('imgs/Texto\ do\ seu\ parágrafo\ \(10\).png'); /* Caminho para a imagem */
+    background-color: rgb(53, 52, 52);
+    background-size:cover; /* Faz a imagem cobrir toda a área */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: repeat; /* Evita repetição */
+    justify-content: center;
+    align-items: center;    
+}
+.linha{
+    border:0;
+    border-top: 4px solid rgb(141, 34, 34);
+    background-color: rgb(112, 56, 56);
+}
+@media (min-width: 992px) {
+  .container { flex-direction: row; }
+  .sidebar { display: block; }
+}
+@media (min-width: 1200px) {
+  .container { max-width: 1140px; margin: 0 auto; }
+}
+@media (min-width: 576px) {
+    .container { flex-direction: row; }
+  .sidebar { display: block; }
+
+}
+@media (min-width: 992px){
+      .container { flex-direction: row; }
+  .sidebar { display: block; }
+
+}
+@media (min-width: 768px){
+        .container { flex-direction: row; }
+  .sidebar { display: block; }
+
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+  
+        .status-DotRed {
+  width: 10px;
+  height: 10px;
+  background-color: #ff0000;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #ff0000; /* brilho */
+  flex-shrink: 0; /* impede de encolher em telas pequenas */
+        filter: 
+          drop-shadow(0 0 10px#ff0000)
+          drop-shadow(0 0 10px #ff0000);
+  animation: ledGlowRed 1s infinite alternate;
+
+}
+@keyframes ledGlowRed{
+  from {
+    opacity: 0.5;
+    filter:drop-shadow(0 0 10px #ff0000)
+           drop-shadow(0 0 10px #001aff);
+
+
+  }
+  to{
+    opacity: 1;
+    filter: drop-shadow(0 0 6px#2600ff)
+            drop-shadow(0 0 10px rgb(255, 0, 0))
+            drop-shadow(0 0 10px rgb(255, 0, 0));
+  }
+}
+
+    .status-DotGreen {
+  width: 10px;
+  height: 10px;
+  background-color: #00ff57;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #00ff57; /* brilho */
+  flex-shrink: 0; /* impede de encolher em telas pequenas */
+        filter: 
+          drop-shadow(0 0 10px#32dd10)
+          drop-shadow(0 0 10px #53d816);
+  animation: ledGlow 1s infinite alternate;
+
+}
+@keyframes ledGlow{
+  from {
+    opacity: 0.5;
+    filter:drop-shadow(0 0 10px #49bb1c)
+           drop-shadow(0 0 10px #ae1cbb);
+
+
+  }
+  to{
+    opacity: 1;
+    filter: drop-shadow(0 0 6px#ae1cbb)
+            drop-shadow(0 0 10px #0f0)
+            drop-shadow(0 0 10px #0f0);
+  }
+}
+.glow-red {
+  color: red;
+  text-
+  text-shadow: 0 0 5px red, 0 0 10px red, 0 0 20px crimson;
+  animation: redGlow 1.5s ease-in-out infinite alternate;
+}
+
+/* Animação do brilho */
+@keyframes redGlow {
+  from {
+    text-shadow: 0 0 5px red, 0 0 10px red, 0 0 20px crimson;
+  }
+  to {
+    text-shadow: 0 0 10px red, 0 0 20px crimson, 0 0 40px red;
+  }
+}
+
+
+
