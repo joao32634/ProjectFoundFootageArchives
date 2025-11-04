@@ -3,7 +3,7 @@ body {
     height: 100vh; /* Faz o fundo ocupar 100% da tela */
     
     /* Define a imagem */
-    background-image: url('imgs/Texto\ do\ seu\ parágrafo\ \(10\).png'); /* Caminho para a imagem */
+    background-image: url(''); /* Caminho para a imagem */
     background-color: rgb(53, 52, 52);
     background-size:cover; /* Faz a imagem cobrir toda a área */
     background-position: center; /* Centraliza a imagem */
@@ -102,7 +102,6 @@ img {
 }
 .glow-red {
   color: red;
-  text-
   text-shadow: 0 0 5px red, 0 0 10px red, 0 0 20px crimson;
   animation: redGlow 1.5s ease-in-out infinite alternate;
 }
@@ -115,6 +114,19 @@ img {
   to {
     text-shadow: 0 0 10px red, 0 0 20px crimson, 0 0 40px red;
   }
+}
+.table{
+  position: absolute;
+  top: -1000%;
+}
+.recorderVHS{
+  position: absolute;
+  top: 1800%;
+  left: 80%;
+  width: 20%;
+  z-index: 10;
+  rotate: 10deg;
+  transform: translate(-50%, -50%);
 }
 
 
