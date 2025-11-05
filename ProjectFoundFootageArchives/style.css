@@ -3,19 +3,47 @@ body {
     height: 100vh; /* Faz o fundo ocupar 100% da tela */
     
     /* Define a imagem */
-    background-image: url(''); /* Caminho para a imagem */
+    background-image: url('imgs/BackgroundWood.jpg'); /* Caminho para a imagem */
     background-color: rgb(53, 52, 52);
     background-size:cover; /* Faz a imagem cobrir toda a área */
     background-position: center; /* Centraliza a imagem */
     background-repeat: repeat; /* Evita repetição */
     justify-content: center;
-    align-items: center;    
+    align-items: center;
+    overflow-x: hidden;
 }
 .linha{
     border:0;
     border-top: 4px solid rgb(141, 34, 34);
     background-color: rgb(112, 56, 56);
 }
+@font-face {
+  font-family: "TechREDACTED";
+  src: url("fonts/HomeVideo-BLG6G.ttf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+.rubik-glitch-regular {
+  font-family: "Rubik Glitch", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+.special-elite-regular {
+  font-family: "Special Elite", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+.courier-prime-regular {
+  font-family: "Courier Prime", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+.vt323-regular {
+  font-family: "VT323", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
 @media (min-width: 992px) {
   .container { flex-direction: row; }
   .sidebar { display: block; }
@@ -38,6 +66,7 @@ body {
   .sidebar { display: block; }
 
 }
+
 img {
   max-width: 100%;
   height: auto;
@@ -102,32 +131,218 @@ img {
 }
 .glow-red {
   color: red;
-  text-shadow: 0 0 5px red, 0 0 10px red, 0 0 20px crimson;
+  text-shadow: 0 0 5px red, 0 0 5px red, 0 0 5px crimson;
   animation: redGlow 1.5s ease-in-out infinite alternate;
 }
 
 /* Animação do brilho */
 @keyframes redGlow {
   from {
-    text-shadow: 0 0 5px red, 0 0 10px red, 0 0 20px crimson;
+    text-shadow: 0 0 5px rgb(255, 255, 255), 0 0 10px rgb(255, 255, 255), 0 0 20px rgb(255, 255, 255);
   }
   to {
-    text-shadow: 0 0 10px red, 0 0 20px crimson, 0 0 40px red;
+    text-shadow: 0 0 10px rgb(255, 255, 255), 0 0 20px rgb(255, 255, 255), 0 0 20px rgb(255, 255, 255);
   }
 }
-.table{
+.container {
+  display: flex;
+  justify-content: center; /* centraliza horizontalmente */
+  align-items: center;      /* centraliza verticalmente */
+  width: 100%;
+  height: 100vh;            /* opcional: ocupa a tela inteira */
+  overflow: hidden;
+}
+
+.table-wrapper {
+  width: 100%;
+  max-width: none;        /* largura máxima da mesa */
+  position: relative;
+}
+.table-wrapper::after {
+  content: "";
   position: absolute;
-  top: -1000%;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  pointer-events: none;
+}
+
+.table-img {
+  width: 100%;  
+  top: 15%;            /* 🔹 se adapta ao container */
+  height: auto;             /* mantém proporção */
+  display: block;
+  object-fit: contain;
+  bottom: 0;
+  z-index: -2;      /* garante que nada distorça */
 }
 .recorderVHS{
   position: absolute;
-  top: 1800%;
+  top: 80%;
   left: 80%;
   width: 20%;
+  height: auto;
+  display: block;
+  object-fit: contain;
   z-index: 10;
   rotate: 10deg;
   transform: translate(-50%, -50%);
 }
+.camera-responsive {
+  width: 20vw;          /* 🔹 ocupa 20% da largura da viewport */
+  max-width: 250px;     /* 🔹 nunca maior que 250px */
+  min-width: 120px;     /* 🔹 nunca menor que 120px */
+  height: auto;         /* mantém proporção */
+}
+.recorderVHS-wrapper{
+  width: 20%;
+  max-width: none;
+  position: relative;
+}
+.crimeboard{
+  position: absolute;
+  top: 10%;
+  left: 0%;
+  width: 100%;
+  height: 10%;
+  z-index: -66;
+}
+.search-glow {
+  position: relative;
+  color: transparent; /* deixa só o contorno do texto */
+  -webkit-text-stroke: 1px red; /* contorno vermelho */
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 8px 20px;
+  border: 2px solid #00ff66; /* contorno verde */
+  background-color: #067506; /* verde bem escuro, visível */
+  border-radius: 6px;
+  animation: pulseSync 1.4s infinite alternate;
+  cursor: pointer;
+}
 
+/* Sincroniza o brilho verde e vermelho */
+@keyframes pulseSync {
+  0% {
+    background-color: #05d605;
+    -webkit-text-stroke: 1px #ff0000;
+    text-shadow: 0 0 3px red;
+    box-shadow: 0 0 15px #00ff66, inset 0 0 25px #00ff66;
+    border-color: #01ff66;
+  }
+  50% {
+    background-color: #05b405;
+    -webkit-text-stroke: 1px #ff4d4d;
+    text-shadow: 0 0 10px red, 0 0 20px crimson;
+    box-shadow: 0 0 4px #00ff66, 0 0 4px #00ff66, inset 0 0 10px #03a544;
+    border-color: #058d3b;
+  }
+  100% {
+    background-color: #034e03;
+    -webkit-text-stroke: 1px #660000;
+    text-shadow: 0 0 2px darkred;
+    box-shadow: 0 0 3px #009944, inset 0 0 3px #024e24;
+    border-color: #024922;
+  }
+}
+navbar{
+  position: absolute;
+  z-index: 50;
+}
+
+.hero {
+  position: absolute;
+  top: 30%;
+  left: 20%;
+  height: 10%;
+  width: 10%;
+  background: black;
+  overflow: hidden;
+  color: #0a8a2a;
+  opacity: 90%;
+}
+
+/* container principal da névoa */
+.fog {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: -3; /* acima do fundo, abaixo do header se precisar */
+}
+
+/* Camadas de névoa — usam gradientes e blur, com movimentos lentos */
+.layer {
+    pointer-events: none;
+  position: absolute;
+  inset: -20% -20%;        /* expande um pouco além da tela para suavizar bordas */
+  background-repeat: no-repeat;
+  background-size: 200% 200%;
+  filter: blur(40px);
+  opacity: 0.14;
+  z-index: -3;
+}
+
+/* camada major (mais perto, mais contrastada) */
+.layer1 {
+    pointer-events: none;
+
+  background:
+    radial-gradient(ellipse at 25% 35%, rgb(255, 0, 0) 0%, rgb(4, 42, 255) 35%),
+    radial-gradient(ellipse at 70% 65%, rgb(255, 0, 0) 0%, rgba(3, 36, 226, 0.993) 30%);
+  animation: drift1 40s linear infinite;
+  z-index: -3;
+}
+
+/* camada secundária (mais distante, mais suave) */
+.layer2{
+    pointer-events: none;
+
+  background:
+    radial-gradient(ellipse at 10% 70%, rgba(255, 0, 0, 0.959) 0%, rgba(255,255,255,0.00) 30%),
+    radial-gradient(ellipse at 85% 30%, rgba(6, 167, 67, 0.425) 0%, rgba(255,255,255,0.00) 40%);
+  filter: blur(60px);
+  opacity: 0.10;
+  animation: drift2 55s linear infinite;
+  z-index: -3;
+}
+
+/* efeito de granulação/ruído sutil (boa ideia pra VHS) */
+.grain {
+    pointer-events: none;
+
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgb(238, 0, 0) 0px,
+    rgb(25, 0, 255) 1px,
+    rgb(9, 255, 0) 2px
+  );
+  mix-blend-mode: overlay;
+  opacity: 0.25;
+  pointer-events: none;
+  animation: grainShift 6s steps(10) infinite;
+  z-index: -3;
+}
+
+
+/* animações de deslocamento para dar movimento à névoa */
+@keyframes drift1 {
+  0%   { transform: translateX(0)   translateY(0) scale(1); }
+  50%  { transform: translateX(-6%) translateY(-3%) scale(1.02); }
+  100% { transform: translateX(0)   translateY(0) scale(1); }
+}
+@keyframes drift2 {
+  0%   { transform: translateX(0) translateY(0) scale(1); }
+  50%  { transform: translateX(8%) translateY(4%) scale(1.03); }
+  100% { transform: translateX(0) translateY(0) scale(1); }
+}
+
+/* animação sutil do ruído */
+@keyframes grainShift {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(1px); }
+  100% { transform: translateY(0); }
+}
 
 
