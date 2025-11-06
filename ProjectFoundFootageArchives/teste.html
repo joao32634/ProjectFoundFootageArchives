@@ -26,6 +26,26 @@
     </form>
 
     <div class="table"><img src="imgs/tablee.png" alt=""></div>
+
+    <div class="tv-container OldTvVHS">
+  <img src="imgs/oldtvvhs.png" alt="TV" class="tv">
+  <img id="gifAnimacao" src="" alt="Animação" class="animacao">
+  <button id="btnPlay" class="botao">Ativar animação</button>
+</div>
+
+<script>
+  const gif = document.getElementById('gifAnimacao');
+  const botao = document.getElementById('btnPlay');
+
+  botao.addEventListener('click', () => {
+    gif.src = 'imgs/tvopening5.gif?cache=' + new Date().getTime();
+    gif.style.display = 'block';
+
+    setTimeout(() => {
+      gif.src = 'imgs/estatictv.png'; // mostra o último frame depois de X segundos
+    }, 3000); // tempo em milissegundos que dura o gif
+  });
+</script>
   </div>
 </nav>
 </body>

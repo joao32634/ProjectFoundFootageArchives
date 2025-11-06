@@ -75,6 +75,7 @@ img {
         .status-DotRed {
   width: 10px;
   height: 10px;
+  margin-top: 0%;
   background-color: #ff0000;
   border-radius: 50%;
   box-shadow: 0 0 10px #ff0000; /* brilho */
@@ -104,6 +105,7 @@ img {
     .status-DotGreen {
   width: 10px;
   height: 10px;
+  margin-top: 0%;
   background-color: #00ff57;
   border-radius: 50%;
   box-shadow: 0 0 10px #00ff57; /* brilho */
@@ -191,9 +193,22 @@ img {
   width: 20vw;          /* 🔹 ocupa 20% da largura da viewport */
   max-width: 250px;     /* 🔹 nunca maior que 250px */
   min-width: 120px;     /* 🔹 nunca menor que 120px */
-  height: auto;         /* mantém proporção */
+  height: auto;  
+         /* mantém proporção */
 }
-.recorderVHS-wrapper{
+.recorderVHS::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-30%) scale(1.2, 0.8);
+  width: 80%;
+  height: 60%;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+  filter: blur(5px);
+  z-index: -1;
+}.recorderVHS-wrapper{
   width: 20%;
   max-width: none;
   position: relative;
@@ -205,6 +220,24 @@ img {
   width: 100%;
   height: 10%;
   z-index: -66;
+}
+.OldTvVHS{
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  width: 24%;
+  height: auto;
+  display: block;
+  z-index: 10;
+  transform: translate(-50%, -50%);
+
+}
+.TVResponsive{
+    width: 20vw;          /* 🔹 ocupa 20% da largura da viewport */
+  max-width: 400px;     /* 🔹 nunca maior que 350px */
+  min-width: 250px;     /* 🔹 nunca menor que 250px */
+  height: auto;  
+
 }
 .search-glow {
   position: relative;
@@ -252,14 +285,64 @@ navbar{
 
 .hero {
   position: absolute;
-  top: 30%;
-  left: 20%;
-  height: 10%;
-  width: 10%;
-  background: black;
+  top: 18%;
+  left: 16%;
+  height: 49%;
+  width: 69%;
+  border-radius: 2px/8px;
+  border-start-start-radius: 11px;
   overflow: hidden;
-  color: #0a8a2a;
+  color: #01ec3c;
   opacity: 90%;
+  z-index: 20;
+}
+.REC{
+  position: absolute;
+  top: 20%;
+  left: 21%;
+  width: 10%;
+  height: auto;
+  border-radius: 50px;
+  display: block;
+  object-fit: contain;
+  z-index: 25;
+  transform: translate(-50%, -50%);
+}
+.tv-openingscreen{
+  position: absolute;
+  top: 18%;
+  left: 1%;
+  height: 49%;
+  width: 100%;
+  overflow: hidden;
+  opacity: 90%;
+  z-index: 20;
+
+}
+
+.animacao {
+  position: absolute;
+  top: 18%;
+  left: 1%;
+  height: 49%;
+  width: 100%;
+  overflow: hidden;
+  opacity: 90%;
+  z-index: 20;
+}
+.botao-tv {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  background: #ff4444;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
 }
 
 /* container principal da névoa */

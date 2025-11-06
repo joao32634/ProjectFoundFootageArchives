@@ -16,33 +16,28 @@
 <body>
 <body>
 <body>
-  <div class="hero">
-    </div>
-    <!-- navbar e conteúdo -->
     <div class="fog">
       <div class="layer layer1"></div>
       <div class="layer layer2"></div>
-      <div class="grain"></div>
     </div>
-</div>
 
-    
+  
     <nav class="navbar fixed-top bg-dark navbar-dark" style="z-index: 10; justify-content: center;" >
   <div class="container-fluid">
-    <a class="navbar-brand" style="font-family: Special Elite;">Found Footage Archives</a>
+    <a class="navbar-brand" style="font-family: TechREDACTED;">Found Footage Archives</a>
         <div class="d-flex align-items-center ms-auto me-3">
       <!-- 🔵 Dot Verde -->
             <span class="status-DotGreen me-2 "></span>
-      <b><a class="nav-link active me-3" style="z-index: 11; font-family: Special Elite; color: white;" aria-current="page" href="#">CONF-Photos</a></b>
+      <b><a class="nav-link active me-3" style="z-index: 11; font-family: TechREDACTED; color: white;" aria-current="page" href="#">CONF-Photos</a></b>
 
       <!-- 🔵 Dot Vermelho -->
       <span class="status-DotRed me-2"></span>
-      <b><a class="nav-link active" style="z-index: 11; font-family: Special Elite; color: white;" aria-current="page" href="#">CONF-Videos</a></b>
+      <b><a class="nav-link active" style="z-index: 11; font-family: TechREDACTED; color: white;" aria-current="page" href="#">CONF-Videos</a></b>
     </div>
 
     <form class="d-flex" role="search">
       <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-      <b><button class="btn btn-success search-glow ButtonSearch-glow" type="submit" style="color: red; font-family: Special Elite; z-index: 11;">SEARCH</button></b>
+      <b><button class="btn btn-success search-glow ButtonSearch-glow" type="submit" style="color: red; font-family: TechREDACTED; z-index: 11;">SEARCH</button></b>
     </form>
   </div>
 </nav>
@@ -54,10 +49,44 @@
     </div>
   </div>    
   
-<div class="recorderVHS position-absolute end-0 me-5 mb-5">
+<div class="recorderVHS camera-shadow position-absolute end-0 me-5 mb-5">
     <img src="imgs/recorderVHS.png" alt="camera" class="img-fluid camera-responsive" style="max-width: 250px;">
   </div>
-</div></container>
+</div>
+
+    <div class="OldTvVHS position-absolute end-0 me-5 mb-5">
+  <img src="imgs/oldtvvhs.png" alt="TV" class="tv">
+  <img id="gifAnimacao" src="" alt="Animação" class="animacao">
+  <button id="btnPlay" class="botao">Ativar animação</button>
+      <div class="hero">
+    
+    <!-- navbar e conteúdo -->
+    <div class="fogs">
+      <div class="layer layer1"></div>
+      <div class="layer layer2"></div>
+      <div class="grain"></div>    
+    </div>
+</div>
+</div>
+
+  
+
+</container>
+
+<script>
+  const gif = document.getElementById('gifAnimacao');
+  const botao = document.getElementById('btnPlay');
+
+  botao.addEventListener('click', () => {
+    gif.src = 'imgs/tvopening5.gif?cache=' + new Date().getTime();
+    gif.style.display = 'block';
+
+    setTimeout(() => {
+      gif.src = 'imgs/estatictv.png'; // mostra o último frame depois de X segundos
+    }, 3000); // tempo em milissegundos que dura o gif
+  });
+</script>
+
 <div class="crimeboard">
   <img src="imgs/background.png" alt="crimeboard">
 </div>
