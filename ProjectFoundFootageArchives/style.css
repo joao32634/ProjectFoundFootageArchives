@@ -1,9 +1,9 @@
 body {
     margin: 0; /* Remove espaço padrão do body */
-    height: 100vh; /* Faz o fundo ocupar 100% da tela */
+    height: 120vh; /* Faz o fundo ocupar 100% da tela */
     
     /* Define a imagem */
-    background-image: url('imgs/BackgroundWood.jpg'); /* Caminho para a imagem */
+    background-image: url('imgs/.jpg'); /* Caminho para a imagem */
     background-color: rgb(53, 52, 52);
     background-size:cover; /* Faz a imagem cobrir toda a área */
     background-position: center; /* Centraliza a imagem */
@@ -170,12 +170,12 @@ img {
 
 .table-img {
   width: 100%;  
-  top: 15%;            /* 🔹 se adapta ao container */
+  top: 10%;            /* 🔹 se adapta ao container */
   height: auto;             /* mantém proporção */
   display: block;
   object-fit: contain;
   bottom: 0;
-  z-index: -2;      /* garante que nada distorça */
+  z-index: -20;      /* garante que nada distorça */
 }
 .recorderVHS{
   position: absolute;
@@ -215,10 +215,10 @@ img {
 }
 .crimeboard{
   position: absolute;
-  top: 10%;
+  top: 8%;
   left: 0%;
-  width: 100%;
-  height: 10%;
+  width: 99%;
+  height: 0%;
   z-index: -66;
 }
 .OldTvVHS{
@@ -388,6 +388,41 @@ navbar{
   animation: drift2 55s linear infinite;
   z-index: -3;
 }
+.layers {
+    pointer-events: none;
+  position: absolute;
+  inset: -20% -20%;        /* expande um pouco além da tela para suavizar bordas */
+  background-repeat: no-repeat;
+  background-size: 200% 200%;
+  filter: blur(40px);
+  opacity: 0.14;
+  z-index: -3;
+}
+
+/* camada major (mais perto, mais contrastada) */
+.layers1 {
+    pointer-events: none;
+
+  background:
+    radial-gradient(ellipse at 25% 35%, rgb(214, 108, 20) 0%, rgb(166, 199, 49) 35%),
+    radial-gradient(ellipse at 70% 65%, rgb(207, 73, 68) 0%, rgba(196, 101, 23, 0.993) 30%);
+  animation: drift1 40s linear infinite;
+  z-index: -3;
+}
+
+/* camada secundária (mais distante, mais suave) */
+.layers2{
+    pointer-events: none;
+
+  background:
+    radial-gradient(ellipse at 10% 70%, rgba(25, 0, 255, 0.959) 0%, rgb(5, 69, 206) 30%),
+    radial-gradient(ellipse at 85% 30%, rgba(247, 5, 5, 0.425) 0%, rgb(240, 4, 4) 40%);
+  filter: blur(60px);
+  opacity: 0.10;
+  animation: drift2 55s linear infinite;
+  z-index: -3;
+}
+
 
 /* efeito de granulação/ruído sutil (boa ideia pra VHS) */
 .grain {
