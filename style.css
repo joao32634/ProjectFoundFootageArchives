@@ -3,7 +3,7 @@ body {
     height: 100vh; /* Faz o fundo ocupar 100% da tela */
     
     /* Define a imagem */
-    background-image: url('imgs/as.jpg'); /* Caminho para a imagem */
+    background-image: url('imgs/ffgh.png'); /* Caminho para a imagem */
     background-color: rgb(53, 52, 52);
     background-size:cover; /* Faz a imagem cobrir toda a área */
     background-position: center; /* Centraliza a imagem */
@@ -172,7 +172,7 @@ img {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  background: linear-gradient(to top, rgba(37, 37, 37, 0.7), transparent);
   pointer-events: none;
 }
 
@@ -187,7 +187,7 @@ img {
 }
 .recorderVHS{
   position: absolute;
-  top: 70%;
+  top: 71%;
   left: 82%;
   width: 30%;
   height: auto;
@@ -200,7 +200,8 @@ img {
 .camera-responsive {
   width: 10vw;          /* 🔹 ocupa 20% da largura da viewport */
   max-width: 800px;     /* 🔹 nunca maior que 250px */
-  min-width: 400px;     /* 🔹 nunca menor que 120px */
+  min-width: 400px;
+  flex-shrink: 0;     /* 🔹 nunca menor que 120px */
   height: auto;  
          /* mantém proporção */
 }
@@ -261,16 +262,16 @@ img {
 }
 .crimeboard{
   position: absolute;
-  top: -2%;
-  left: 20%;
-  width: 90%;
+  top: 1%;
+  left: 25%;
+  width: 70%;
   height: 100%;
   height: auto;
   z-index: -66;
 }
 .OldTvVHS{
   position: absolute;
-  top: 70%;
+  top: 80%;
   left: 50%;
   width: 40%;
   height: auto;
@@ -448,7 +449,7 @@ navbar{
   background-size: 200% 200%;
   filter: blur(40px);
   opacity: 0.14;
-  z-index: -3;
+  z-index: -1;
 }
 
 /* camada major (mais perto, mais contrastada) */
@@ -459,7 +460,7 @@ navbar{
     radial-gradient(ellipse at 25% 35%, rgb(255, 0, 0) 0%, rgb(4, 42, 255) 35%),
     radial-gradient(ellipse at 70% 65%, rgb(255, 0, 0) 0%, rgba(3, 36, 226, 0.993) 30%);
   animation: drift1 40s linear infinite;
-  z-index: -3;
+  z-index: -1;
 }
 
 /* camada secundária (mais distante, mais suave) */
@@ -472,7 +473,7 @@ navbar{
   filter: blur(60px);
   opacity: 0.10;
   animation: drift2 55s linear infinite;
-  z-index: -3;
+  z-index: -1;
 }
 .layers {
     pointer-events: none;
@@ -490,7 +491,7 @@ navbar{
     pointer-events: none;
 
   background:
-    radial-gradient(ellipse at 25% 35%, rgb(214, 108, 20) 0%, rgb(166, 199, 49) 35%),
+    radial-gradient(ellipse at 25% 35%, rgb(8, 8, 8) 0%, rgb(166, 199, 49) 35%),
     radial-gradient(ellipse at 70% 65%, rgb(207, 73, 68) 0%, rgba(196, 101, 23, 0.993) 30%);
   animation: drift1 40s linear infinite;
   z-index: -3;
