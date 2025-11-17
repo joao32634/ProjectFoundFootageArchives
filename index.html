@@ -14,12 +14,11 @@
     <title>Document</title>
 </head>
 <body>
-<body>
-<body>
+
     <div class="fog">
-      <div class="layers layers1"></div>
-      <div class="layers layers2"></div>
-    </div>
+        <div class="layers layers1"></div>
+        <div class="layers layers2"></div>
+      </div>
 
   
     <nav class="navbar fixed-top bg-dark navbar-dark" style="z-index: 10; justify-content: center;" >
@@ -41,7 +40,7 @@
     </form>
   </div>
 </nav>
-<div class="table-img table-wrapper container-fluid position-relative fixed-bottom p-0" style="z-index: -3;">
+<div class="table-img table-wrapper table-responsive  position-relative fixed-bottom p-0" style="z-index: -3;">
   <!-- MESA -->
   <div class=" row justify-content-center">
     <div class="col-12">
@@ -55,15 +54,18 @@
       <span class="camera-red"></span>
       <span class="camera-green"></span>
 
-  </div>
+ </div>
 </div>
 
-    <div class="OldTvVHS position-absolute end-0 me-5 mb-5">
+
+    <div class="OldTvVHS TVResponsive  position-absolute end-0 me-5 mb-5">
   <img src="imgs/oldtvvhs.png" alt="TV" class="tv">
+  <span class="TVv-Shadow"></span>
   <span id="btnPlay" class="botao-LIGAR"></span>
   <img id="gifAnimacao"  src="" class="animacao">
   <span id="btnDSLG" class="botao-DSLG"></span>
     <img id="btnDSLG"  src="" class="animacao">
+    <img src="imgs/cabless.png" class="TV-Cables" alt="cables">
 
       <div class="hero">
     
@@ -75,10 +77,13 @@
     </div>
 </div>
 </div>
-
-  
-
 </container>
+
+<div class="VHS_Tapes VHS_Tapes-responsive VHS_Tapes-shadow position-absolute end-0 me-5 mb-5">
+    <img src="imgs/vhstape.png" alt="camera" class="img-fluid ">
+  </div>
+</div>
+
 
 <script>
   const gif = document.getElementById('gifAnimacao');
@@ -90,7 +95,7 @@
 
 
     setTimeout(() => {
-      gif.src = 'imgs/NOVHSOFF.png'; // mostra o último frame depois de X segundos
+      gif.src = 'imgs/stacticpg.png'; // mostra o último frame depois de X segundos
     }, 1000); // tempo em milissegundos que dura o gif
         botao.classList.add ('verde');
 

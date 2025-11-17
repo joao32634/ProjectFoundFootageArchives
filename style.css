@@ -4,21 +4,21 @@ body {
     
     /* Define a imagem */
     background-image: url('imgs/ffgh.png'); /* Caminho para a imagem */
-    background-color: rgb(53, 52, 52);
+    background-color: rgb(0, 0, 0);
     background-size:cover; /* Faz a imagem cobrir toda a área */
     background-position: center; /* Centraliza a imagem */
-    background-repeat: repeat; /* Evita repetição */
+    background-repeat: no-repeat; /* Evita repetição */
+    background-attachment:local;
     justify-content: center;
     margin: 0;
     padding: 0;
     width: 100%;
-    min-height: 100vh;
-    overflow-x: hidden;
+    min-height: 80vh;
     overflow-y: auto;
+    overflow-x: hidden;
     scroll-behavior: smooth;
     position: relative;
     left: 0;
-    overflow-x: hidden;
 }
 .linha{
     border:0;
@@ -180,10 +180,18 @@ img {
   width: 100%;  
   top: 15%;            /* 🔹 se adapta ao container */
   height: auto;             /* mantém proporção */
-  display: block;
   object-fit: contain;
   bottom: 0;
   z-index: -2;      /* garante que nada distorça */
+}
+.table-responsive {
+  max-width: 1360px;     /* 🔹 nunca maior que 250px */
+  min-width: 1300px;
+  flex-shrink: 0;     /* 🔹 nunca menor que 120px */
+  height: auto;
+  overflow-x: hidden;
+  overflow-y: hidden;  
+         /* mantém proporção */
 }
 .recorderVHS{
   position: absolute;
@@ -208,13 +216,14 @@ img {
 .recorderVHS::after {
   content: "";
   position: absolute;
-  bottom: -10px;
-  left: 50%;
+  bottom: 29px;
+  left: 42%;
   transform: translateX(-30%) scale(1.2, 0.8);
-  width: 90%;
-  height: 55%;
+  width: 70%;
+  height: 35%;
   background: rgba(0, 0, 0, 0.4);
-  border-radius: 50%;
+  border-radius: 20%;
+  rotate:-15deg;
   filter: blur(5px);
   z-index: -1;
 }
@@ -260,6 +269,27 @@ img {
   max-width: none;
   position: relative;
 }
+
+.VHS_Tapes{
+    position: absolute;
+  top: 84%;
+  left: 4%;
+  width: 50%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  z-index: 1;
+
+}
+.VHS_Tapes-responsive {
+  width: 10vw;          /* 🔹 ocupa 20% da largura da viewport */
+  max-width: 800px;     /* 🔹 nunca maior que 250px */
+  min-width: 320px;
+  flex-shrink: 0;     /* 🔹 nunca menor que 120px */
+  height: auto;  
+         /* mantém proporção */
+}
+
 .crimeboard{
   position: absolute;
   top: 1%;
@@ -269,22 +299,48 @@ img {
   height: auto;
   z-index: -66;
 }
+
 .OldTvVHS{
   position: absolute;
-  top: 80%;
+  top: 75%;
   left: 50%;
   width: 40%;
   height: auto;
   display: block;
-  z-index: 1;
+  z-index: 2;
   transform: translate(-50%, -50%);
 
 }
 .TVResponsive{
-    width: 20vw;          /* 🔹 ocupa 20% da largura da viewport */
+    width: 10vw;          /* 🔹 ocupa 20% da largura da viewport */
   max-width: 400px;     /* 🔹 nunca maior que 350px */
-  min-width: 250px;     /* 🔹 nunca menor que 250px */
+  min-width: 550px;     /* 🔹 nunca menor que 250px */
   height: auto;  
+
+}
+.TVv-Shadow{
+    content: "";
+  position: absolute;
+  bottom: -50px;
+  left: 15%;
+  width: 73%;
+  height: 50%;
+  border-radius:10%;
+  background: rgba(0, 0, 0, 0.4);
+  rotate:2deg;
+  filter: blur(5px);
+  z-index: -1;
+
+}
+.TV-Cables{
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  width: 90%;
+  height: auto;
+  display: block;
+  z-index: -2;
+  transform: translate(-50%, -50%);
 
 }
 .search-glow {
@@ -333,12 +389,11 @@ navbar{
 
 .hero {
   position: absolute;
-  top: 15%;
-  left: 16%;
-  height: 52%;
-  width: 69%;
-  border-radius: 2px/8px;
-  border-start-start-radius: 11px;
+  top: 18%;
+  left: 17.20%;
+  height: 48%;
+  width: 67%;
+  border-radius: 8%;
   overflow: hidden;
   color: #01ec3c;
   opacity: 90%;
@@ -380,11 +435,11 @@ navbar{
 
 .animacao {
   position: absolute;
-  top: 16%;
-  left: 1%;
-  height: 51%;
+  top: 17.50%;
+  left: 1.20%;
+  height: 49%;
   width: 99%;
-  border-radius: 20px;
+  border-radius: 20%;
   overflow: hidden;
   display: none;
   z-index: 20;
@@ -444,7 +499,7 @@ navbar{
 .layer {
     pointer-events: none;
   position: absolute;
-  inset: -20% -20%;        /* expande um pouco além da tela para suavizar bordas */
+  inset: -20%;        /* expande um pouco além da tela para suavizar bordas */
   background-repeat: no-repeat;
   background-size: 200% 200%;
   filter: blur(40px);
@@ -478,7 +533,7 @@ navbar{
 .layers {
     pointer-events: none;
   position: absolute;
-  inset: -20% -20%;        /* expande um pouco além da tela para suavizar bordas */
+  inset: -20%;        /* expande um pouco além da tela para suavizar bordas */
   background-repeat: no-repeat;
   background-size: 200% 200%;
   filter: blur(40px);
